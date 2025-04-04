@@ -1,0 +1,367 @@
+  /* Global Styles */
+  body {
+    margin: 0;
+    padding: 0;
+    background-color: #000000;
+    background-image: linear-gradient(
+        to bottom left,
+        #15fa00 40.5%,
+        transparent 20.5%,
+        transparent
+      ),
+      linear-gradient(
+        to top left,
+        #15fa00 40.5%,
+        transparent 20.5%,
+        transparent
+      );
+    background-size: 50% 50% 30%;
+    background-position: top left, bottom right;
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
+    overflow-x: hidden;
+    color: #ffffff;
+  }
+
+  /* Header Styles */
+  header {
+    background-color: rgba(21, 250, 0, 0.95);
+    backdrop-filter: blur(10px);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  .header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 0;
+  }
+
+  .header-title {
+    display: flex;
+    align-items: center;
+  }
+
+  .profile {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    margin-right: 15px;
+  }
+
+  h1 {
+    margin: 0;
+    font-size: 22px;
+    font-family: "Times New Roman", Times, serif;
+    color: white;
+  }
+
+  /* Navigation */
+  nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+  }
+
+  nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    position: relative;
+    padding: 5px 0;
+  }
+
+  nav ul li a::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: white;
+    transition: width 0.3s ease;
+  }
+
+  nav ul li a:hover::after,
+  nav ul li a.active::after {
+    width: 100%;
+  }
+
+  /* Mobile Menu */
+  .menu-icon {
+    display: none;
+    cursor: pointer;
+    font-size: 24px;
+    color: white;
+  }
+
+  .dropdown {
+    display: none;
+    position: absolute;
+    flex-direction: column;
+    top: 80px;
+    right: 20px;
+    background-color: rgba(21, 250, 0, 0.95);
+    border-radius: 5px;
+    padding: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1001;
+  }
+
+  .dropdown ul {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .dropdown ul li a {
+    margin: 20px 0;
+    color: white;
+    text-decoration: none;
+  }
+
+  .dropdown ul li a:hover {
+    color: #080e03;
+  }
+
+  .dropdown.show {
+    display: flex;
+  }
+
+  /* Main Content */
+  main {
+    margin-top: 80px;
+    min-height: calc(100vh - 80px);
+  }
+
+  /* Home Section */
+  .home {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0rem 0;
+    position: relative;
+  }
+
+  .home-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 4rem;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 0px;
+  }
+
+  .home-content {
+    animation: fadeIn 0.8s ease-out forwards;
+  }
+
+  .home-content h3 {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: #ffffff;
+  }
+
+  .home-content h2 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: #15fa00;
+  }
+
+  .home-content p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    color: #ffffff;
+    max-width: 600px;
+  }
+
+  .cta-buttons {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+
+  .btn {
+    display: inline-block;
+    padding: 12px 30px;
+    border-radius: 50px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+
+  .btn-primary {
+    background-color: #15fa00;
+    color: #000000;
+    border: 2px solid #15fa00;
+  }
+
+  .btn-secondary {
+    background-color: transparent;
+    color: #15fa00;
+    border: 2px solid #15fa00;
+  }
+
+  .btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(21, 250, 0, 0.3);
+  }
+
+  .btn-primary:hover {
+    background-color: #32fc00;
+    border-color: #32fc00;
+  }
+
+  .btn-secondary:hover {
+    background-color: #15fa00;
+    color: #000000;
+  }
+
+  .home-img {
+    position: relative;
+    text-align: right;
+  }
+
+  .home-img img {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(21, 250, 0, 0.3);
+  }
+
+  .social-links {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+
+  .social-links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: transparent;
+    border: 2px solid #15fa00;
+    color: #15fa00;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+  }
+
+  .social-links a:hover {
+    background-color: #15fa00;
+    color: #000000;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(21, 250, 0, 0.3);
+  }
+
+  /* Responsive Design */
+  @media (max-width: 992px) {
+    .home-grid {
+      grid-template-columns: 1fr;
+      text-align: center;
+      gap: 2rem;
+    }
+
+    .home-content p {
+      margin: 0 auto 2rem;
+    }
+
+    .home-content h2 {
+      color: #094e03;
+    }
+
+    .cta-buttons {
+      justify-content: center;
+    }
+
+    .social-links {
+      justify-content: center;
+    }
+
+    .home-img {
+      text-align: center;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .menu-icon {
+      display: block;
+    }
+
+    nav {
+      display: none;
+    }
+
+    .header-content {
+      padding: 12px 0;
+    }
+
+    .home-content h2 {
+      font-size: 2.5rem;
+      color: #094e03;
+    }
+
+    .home-content h3 {
+      font-size: 1.5rem;
+    }
+
+    .home-content p {
+      font-size: 1rem;
+    }
+  }
+
+  @media (max-width: 576px) {
+    .profile {
+      width: 40px;
+      height: 40px;
+    }
+
+    h1 {
+      font-size: 18px;
+    }
+
+    .home-content h2 {
+      color: #094e03;
+    }
+
+    .cta-buttons {
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .home-img img {
+      max-width: 300px;
+    }
+  }
+
+  /* Animations */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }

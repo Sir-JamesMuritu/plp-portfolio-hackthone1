@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="James Muritu - Web Developer, Programmer, Graphic Designer, and Photographer Portfolio"
+    />
+    <meta
+      name="keywords"
+      content="web development, programming, graphic design, photography, portfolio"
+    />
+    <title>James Muritu - Portfolio</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+    <link rel="stylesheet" href="/assets/css/style.css" />
+  </head>
+
+  <body>
+    <header>
+      <div class="container">
+        <div class="header-content">
+          <div class="header-title">
+            <img
+              class="profile"
+              src="/assets/images/official.jpeg"
+              alt="Profile Picture"
+            />
+            <h1>James Muritu</h1>
+          </div>
+          <i class="fas fa-bars menu-icon" onclick="toggleMenu()"></i>
+          <nav>
+            <ul>
+              <li><a href="index.html" class="active">Home</a></li>
+              <li><a href="about.html">About me</a></li>
+              <li><a href="services.html">Services</a></li>
+              <li><a href="skills.html">Skills</a></li>
+              <li><a href="contact.html">Contact me</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+      <div class="dropdown" id="dropdownMenu">
+        <ul>
+          <li><a href="index.html" class="active">Home</a></li>
+          <li><a href="about.html">About me</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="skills.html">Skills</a></li>
+          <li><a href="contact.html">Contact me</a></li>
+        </ul>
+      </div>
+    </header>
+
+    <main>
+      <section class="home">
+        <div class="home-grid">
+          <div class="home-content">
+            <h3>Welcome to my Portfolio</h3>
+            <h2>Hi, I'm Sir_James Muritu</h2>
+            <p>
+              I'm a passionate Web Developer, Programmer, Graphic Designer, and
+              Photographer based in Nairobi, Kenya. With expertise in creating
+              stunning websites, developing efficient software solutions,
+              crafting beautiful designs, and capturing memorable moments.
+            </p>
+
+            <div class="cta-buttons">
+              <a href="contact.html" class="btn btn-primary">Hire Me</a>
+              <a href="assets/files/mycv.pdf" class="btn btn-secondary" download
+                >Download CV</a
+              >
+            </div>
+
+            <div class="social-links">
+              <a
+                href="https://www.facebook.com/Prince Jeddie"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <i class="fab fa-facebook"></i>
+              </a>
+              <a
+                href="https://www.twitter.com/@julius29511"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <i class="fab fa-twitter"></i>
+              </a>
+              <a href="#" target="_blank" rel="noopener noreferrer">
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a
+                href="https://wa.me/+254704234834"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <i class="fab fa-whatsapp"></i>
+              </a>
+            </div>
+          </div>
+
+          <div class="home-img">
+            <img src="/assets/images/olio.png.png" alt="James Muritu" />
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script>
+      function toggleMenu() {
+        const dropdown = document.getElementById("dropdownMenu");
+        dropdown.classList.toggle("show");
+      }
+
+      // Close dropdown when clicking outside
+      document.addEventListener("click", function (event) {
+        const dropdown = document.getElementById("dropdownMenu");
+        const menuIcon = document.querySelector(".menu-icon");
+
+        if (
+          !menuIcon.contains(event.target) &&
+          !dropdown.contains(event.target)
+        ) {
+          dropdown.classList.remove("show");
+        }
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Skills and expertise of James Muritu - Web Development, Programming, Graphic Design, and Photography"
+    />
+    <meta
+      name="keywords"
+      content="skills, web development, programming, graphic design, photography"
+    />
+    <title>Skills - Sir_James Muritu</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        background-color: black;
+        color: #ffffff;
+        font-family: "Arial", sans-serif;
+        min-height: 100vh;
+      }
+
+      .element {
+        animation: slideIn 0.5s ease-in-out;
+      }
+
+      header {
+        background-color: rgba(21, 250, 0, 0.95);
+        backdrop-filter: blur(10px);
+        position: fixed;
+        width: 100%;
+        top: 0;
+        z-index: 1000;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      .header-content {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 15px 0;
+      }
+
+      .profile {
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        object-fit: cover;
+        margin-right: 15px;
+      }
+
+      .header-title {
+        display: flex;
+        align-items: center;
+      }
+
+      h1 {
+        margin: 0;
+        font-size: 22px;
+        font-family: "Times New Roman", Times, serif;
+        color: white;
+      }
+
+      nav {
+        padding: 10px;
+      }
+
+      nav ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        gap: 20px;
+      }
+
+      nav ul li a {
+        color: white;
+        text-decoration: none;
+        font-weight: 500;
+        position: relative;
+        padding: 5px 0;
+      }
+
+      nav ul li a::after {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 2px;
+        bottom: 0;
+        left: 0;
+        background-color: white;
+        transition: width 0.3s ease;
+      }
+
+      nav ul li a:hover::after,
+      nav ul li a.active::after {
+        width: 100%;
+      }
+
+      .menu-icon {
+        display: none;
+        cursor: pointer;
+        font-size: 24px;
+        color: white;
+      }
+
+      p {
+        color: white;
+        text-align: left;
+        margin-top: 50px;
+      }
+
+      .section-title {
+        color: #15fa00;
+        text-align: center;
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        text-decoration: underline;
+        font-style: italic;
+      }
+
+      .section-description {
+        color: #ffffff;
+        text-align: center;
+        max-width: 800px;
+        margin: 0 auto 3rem;
+        font-family: Georgia, "Times New Roman", Times, serif;
+      }
+
+      .skills-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 30px;
+        padding: 20px;
+      }
+
+      .skills-container {
+        background-color: transparent;
+        border-radius: 10px;
+        padding: 30px;
+        box-shadow: 5px 5px 5px 5px rgb(253, 0, 0);
+        opacity: 0;
+        animation: bounce-in 2s ease-in-out forwards;
+      }
+
+      @keyframes bounce-in {
+        0% {
+          opacity: 0;
+          transform: translateX(-50px);
+        }
+        50% {
+          opacity: 0.5;
+          transform: translateX(20px);
+        }
+        100% {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+
+      .skills-container:hover {
+        transform: translateY(-5px);
+        transition: transform 0.3s ease;
+      }
+
+      .skills-container h2 {
+        color: #15fa00;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        text-decoration: underline;
+        font-style: italic;
+        text-align: center;
+        margin-bottom: 1.5rem;
+      }
+
+      .skill {
+        margin-bottom: 20px;
+      }
+
+      .skill-title {
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 10px;
+        color: #ffffff;
+        font-family: Georgia, "Times New Roman", Times, serif;
+      }
+
+      .skill-level {
+        display: flex;
+        align-items: center;
+        font-weight: bold;
+        color: #15fa00;
+        font-family: Georgia, "Times New Roman", Times, serif;
+      }
+
+      .skill-level-bar {
+        flex: 1;
+        height: 10px;
+        background-color: rgba(255, 255, 255, 0.1);
+        border-radius: 5px;
+        margin-right: 10px;
+        overflow: hidden;
+      }
+
+      .skill-level-fill {
+        height: 100%;
+        background-color: #15fa00;
+        border-radius: 5px;
+        transition: width 1s ease-in-out;
+      }
+
+      .dropdown {
+        display: none;
+        position: absolute;
+        top: 80px;
+        right: 20px;
+        background-color: rgba(21, 250, 0, 0.95);
+        border-radius: 5px;
+        padding: 15px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        z-index: 1001;
+      }
+
+      .dropdown ul {
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .dropdown ul li a {
+        color: white;
+        text-decoration: none;
+      }
+
+      .dropdown ul li a:hover {
+        color: #080e03;
+      }
+
+      .dropdown.show {
+        display: block;
+      }
+
+      main {
+        margin-top: 80px;
+        padding: 40px 0;
+      }
+
+      @media (max-width: 768px) {
+        .menu-icon {
+          display: block;
+        }
+
+        nav {
+          display: none;
+        }
+
+        .header-content {
+          padding: 12px 0;
+        }
+      }
+
+      @media (max-width: 576px) {
+        .profile {
+          width: 40px;
+          height: 40px;
+        }
+
+        h1 {
+          font-size: 18px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <div class="header-content">
+          <div class="header-title">
+            <img class="profile" src="/assets/images/official.jpeg" alt="Profile Picture" />
+            <h1>James Muritu</h1>
+          </div>
+          <i class="fas fa-bars menu-icon" onclick="toggleMenu()"></i>
+          <nav>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="about.html">About me</a></li>
+              <li><a href="services.html">Services</a></li>
+              <li><a href="skills.html" class="active">Skills</a></li>
+              <li><a href="contact.html">Contact me</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+      <div class="dropdown" id="dropdownMenu">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About me</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="skills.html" class="active">Skills</a></li>
+          <li><a href="contact.html">Contact me</a></li>
+        </ul>
+      </div>
+    </header>
+
+    <main>
+      <div class="container">
+        <h2 class="section-title">My Skills</h2>
+        <p class="section-description">
+          Here's an overview of my technical expertise and proficiency levels in
+          various areas.
+        </p>
+
+        <div class="skills-grid">
+          <div class="skills-container">
+            <h2>Coding Skills</h2>
+            <div class="skill">
+              <div class="skill-title">HTML</div>
+              <div class="skill-level">
+                <div class="skill-level-bar">
+                  <div class="skill-level-fill" style="width: 99%"></div>
+                </div>
+                <div>99%</div>
+              </div>
+            </div>
+            <div class="skill">
+              <div class="skill-title">CSS</div>
+              <div class="skill-level">
+                <div class="skill-level-bar">
+                  <div class="skill-level-fill" style="width: 95%"></div>
+                </div>
+                <div>95%</div>
+              </div>
+            </div>
+            <div class="skill">
+              <div class="skill-title">JavaScript</div>
+              <div class="skill-level">
+                <div class="skill-level-bar">
+                  <div class="skill-level-fill" style="width: 90%"></div>
+                </div>
+                <div>90%</div>
+              </div>
+            </div>
+            <div class="skill">
+              <div class="skill-title">Python</div>
+              <div class="skill-level">
+                <div class="skill-level-bar">
+                  <div class="skill-level-fill" style="width: 80%"></div>
+                </div>
+                <div>80%</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="skills-container">
+            <h2>Design Skills</h2>
+            <div class="skill">
+              <div class="skill-title">Adobe Photoshop</div>
+              <div class="skill-level">
+                <div class="skill-level-bar">
+                  <div class="skill-level-fill" style="width: 85%"></div>
+                </div>
+                <div>85%</div>
+              </div>
+            </div>
+            <div class="skill">
+              <div class="skill-title">Adobe Illustrator</div>
+              <div class="skill-level">
+                <div class="skill-level-bar">
+                  <div class="skill-level-fill" style="width: 70%"></div>
+                </div>
+                <div>70%</div>
+              </div>
+            </div>
+            <div class="skill">
+              <div class="skill-title">UI/UX Design</div>
+              <div class="skill-level">
+                <div class="skill-level-bar">
+                  <div class="skill-level-fill" style="width: 65%"></div>
+                </div>
+                <div>65%</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="skills-container">
+            <h2>Photography Skills</h2>
+            <div class="skill">
+              <div class="skill-title">Portrait Photography</div>
+              <div class="skill-level">
+                <div class="skill-level-bar">
+                  <div class="skill-level-fill" style="width: 90%"></div>
+                </div>
+                <div>90%</div>
+              </div>
+            </div>
+            <div class="skill">
+              <div class="skill-title">Event Photography</div>
+              <div class="skill-level">
+                <div class="skill-level-bar">
+                  <div class="skill-level-fill" style="width: 85%"></div>
+                </div>
+                <div>85%</div>
+              </div>
+            </div>
+            <div class="skill">
+              <div class="skill-title">Photo Editing</div>
+              <div class="skill-level">
+                <div class="skill-level-bar">
+                  <div class="skill-level-fill" style="width: 80%"></div>
+                </div>
+                <div>80%</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script src="/assets/js/main.js"></script>
+  </body>
+</html>

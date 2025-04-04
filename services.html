@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Professional services offered by James Muritu - Web Development, Programming, Graphic Design, and Photography"
+    />
+    <meta
+      name="keywords"
+      content="web development services, programming services, graphic design services, photography services"
+    />
+    <title>Services - Sir_James Muritu</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        background-color: black;
+        color: #ffffff;
+        font-family: "Arial", sans-serif;
+        min-height: 100vh;
+      }
+
+      .element {
+        animation: slideIn 0.5s ease-in-out;
+      }
+
+      header {
+        background-color: rgba(21, 250, 0, 0.95);
+        backdrop-filter: blur(10px);
+        position: fixed;
+        width: 100%;
+        top: 0;
+        z-index: 1000;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      .header-content {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 15px 0;
+      }
+
+      .profile {
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        object-fit: cover;
+        margin-right: 15px;
+      }
+
+      .header-title {
+        display: flex;
+        align-items: center;
+      }
+
+      h1 {
+        margin: 0;
+        font-size: 22px;
+        font-family: "Times New Roman", Times, serif;
+        color: white;
+      }
+
+      nav {
+        padding: 10px;
+      }
+
+      nav ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        gap: 20px;
+      }
+
+      nav ul li a {
+        color: white;
+        text-decoration: none;
+        font-weight: 500;
+        position: relative;
+        padding: 5px 0;
+      }
+
+      nav ul li a::after {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 2px;
+        bottom: 0;
+        left: 0;
+        background-color: white;
+        transition: width 0.3s ease;
+      }
+
+      nav ul li a:hover::after,
+      nav ul li a.active::after {
+        width: 100%;
+      }
+
+      .menu-icon {
+        display: none;
+        cursor: pointer;
+        font-size: 24px;
+        color: white;
+      }
+
+      .services-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 30px;
+        padding: 20px;
+      }
+
+      .service-card {
+        background-color: transparent;
+        border-radius: 10px;
+        padding: 30px;
+        box-shadow: 5px 5px 5px 5px rgb(253, 0, 0);
+        text-align: center;
+        opacity: 0;
+        animation: bounce-in 2s ease-in-out forwards;
+      }
+
+      @keyframes bounce-in {
+        0% {
+          opacity: 0;
+          transform: translateX(-50px);
+        }
+        50% {
+          opacity: 0.5;
+          transform: translateX(20px);
+        }
+        100% {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+
+      .service-card:hover {
+        transform: translateY(-5px);
+        transition: transform 0.3s ease;
+      }
+
+      .service-card i {
+        font-size: 3rem;
+        color: #15fa00;
+        margin-bottom: 1.5rem;
+      }
+
+      .service-card h3 {
+        color: #15fa00;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        text-decoration: underline;
+        font-style: italic;
+        margin-bottom: 1rem;
+      }
+
+      .service-card p {
+        color: #ffffff;
+        font-family: Georgia, "Times New Roman", Times, serif;
+        margin-bottom: 1.5rem;
+      }
+
+      .service-features {
+        list-style: none;
+        padding: 0;
+        margin: 0 0 1.5rem;
+        text-align: left;
+      }
+
+      .service-features li {
+        color: #ffffff;
+        margin-bottom: 0.5rem;
+        display: flex;
+        align-items: center;
+        font-family: Georgia, "Times New Roman", Times, serif;
+      }
+
+      .service-features li i {
+        font-size: 1rem;
+        margin-right: 0.5rem;
+        margin-bottom: 0;
+        color: #15fa00;
+      }
+
+      .btn {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #15fa00;
+        color: black;
+        text-decoration: none;
+        border-radius: 5px;
+        font-weight: bold;
+        transition: all 0.3s ease;
+      }
+
+      .btn:hover {
+        background-color: #32fc00;
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(21, 250, 0, 0.3);
+      }
+
+      .section-title {
+        color: #15fa00;
+        text-align: center;
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        text-decoration: underline;
+        font-style: italic;
+      }
+
+      .section-description {
+        color: #ffffff;
+        text-align: center;
+        max-width: 800px;
+        margin: 0 auto 3rem;
+        font-family: Georgia, "Times New Roman", Times, serif;
+      }
+
+      .dropdown {
+        display: none;
+        position: absolute;
+        top: 80px;
+        right: 20px;
+        background-color: rgba(21, 250, 0, 0.95);
+        border-radius: 5px;
+        padding: 15px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        z-index: 1001;
+      }
+
+      .dropdown ul {
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .dropdown ul li a {
+        color: white;
+        text-decoration: none;
+      }
+
+      .dropdown ul li a:hover {
+        color: #080e03;
+      }
+
+      .dropdown.show {
+        display: block;
+      }
+
+      main {
+        margin-top: 80px;
+        padding: 40px 0;
+      }
+
+      @media (max-width: 768px) {
+        .menu-icon {
+          display: block;
+        }
+
+        nav {
+          display: none;
+        }
+
+        .header-content {
+          padding: 12px 0;
+        }
+
+        .services-grid {
+          grid-template-columns: 1fr;
+          padding: 10px;
+        }
+
+        .service-card {
+          padding: 20px;
+        }
+
+        .container {
+          padding: 10px;
+        }
+      }
+
+      @media (max-width: 576px) {
+        .profile {
+          width: 40px;
+          height: 40px;
+        }
+
+        h1 {
+          font-size: 18px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <div class="header-content">
+          <div class="header-title">
+            <img class="profile" src="/assets/images/official.jpeg" alt="Profile Picture" />
+            <h1>James Muritu</h1>
+          </div>
+          <i class="fas fa-bars menu-icon" onclick="toggleMenu()"></i>
+          <nav>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="about.html">About me</a></li>
+              <li><a href="services.html" class="active">Services</a></li>
+              <li><a href="skills.html">Skills</a></li>
+              <li><a href="contact.html">Contact me</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+      <div class="dropdown" id="dropdownMenu">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About me</a></li>
+          <li><a href="services.html" class="active">Services</a></li>
+          <li><a href="skills.html">Skills</a></li>
+          <li><a href="contact.html">Contact me</a></li>
+        </ul>
+      </div>
+    </header>
+
+    <main>
+      <div class="container">
+        <h2 class="section-title">My Services</h2>
+        <p class="section-description">
+          I offer a wide range of professional services to help bring your ideas
+          to life.
+        </p>
+
+        <div class="services-grid">
+          <div class="service-card">
+            <i class="fas fa-code"></i>
+            <h3>Web Development</h3>
+            <p>
+              Custom website development using modern technologies and best
+              practices. Responsive design, SEO optimization, and performance
+              tuning.
+            </p>
+            <ul class="service-features">
+              <li><i class="fas fa-check"></i> Responsive Design</li>
+              <li><i class="fas fa-check"></i> SEO Optimization</li>
+              <li><i class="fas fa-check"></i> Performance Tuning</li>
+              <li><i class="fas fa-check"></i> Modern Technologies</li>
+            </ul>
+            <a href="contact.html" class="btn">Get Started</a>
+          </div>
+
+          <div class="service-card">
+            <i class="fas fa-laptop-code"></i>
+            <h3>Programming</h3>
+            <p>
+              Custom software development, automation solutions, and system
+              integration. Clean code, efficient algorithms, and scalable
+              solutions.
+            </p>
+            <ul class="service-features">
+              <li><i class="fas fa-check"></i> Custom Software</li>
+              <li><i class="fas fa-check"></i> Process Automation</li>
+              <li><i class="fas fa-check"></i> System Integration</li>
+              <li><i class="fas fa-check"></i> Code Optimization</li>
+            </ul>
+            <a href="contact.html" class="btn">Get Started</a>
+          </div>
+
+          <div class="service-card">
+            <i class="fas fa-palette"></i>
+            <h3>Graphic Design</h3>
+            <p>
+              Creative design solutions for your brand. Logos, marketing
+              materials, social media graphics, and brand identity development.
+            </p>
+            <ul class="service-features">
+              <li><i class="fas fa-check"></i> Logo Design</li>
+              <li><i class="fas fa-check"></i> Brand Identity</li>
+              <li><i class="fas fa-check"></i> Marketing Materials</li>
+              <li><i class="fas fa-check"></i> Social Media Graphics</li>
+            </ul>
+            <a href="contact.html" class="btn">Get Started</a>
+          </div>
+
+          <div class="service-card">
+            <i class="fas fa-camera"></i>
+            <h3>Photography</h3>
+            <p>
+              Professional photography services for events, products, and
+              portraits. High-quality images with artistic direction and
+              post-processing.
+            </p>
+            <ul class="service-features">
+              <li><i class="fas fa-check"></i> Event Coverage</li>
+              <li><i class="fas fa-check"></i> Product Photography</li>
+              <li><i class="fas fa-check"></i> Portrait Sessions</li>
+              <li><i class="fas fa-check"></i> Photo Editing</li>
+            </ul>
+            <a href="contact.html" class="btn">Get Started</a>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script src="/assets/js/main.js"></script>
+  </body>
+</html>
