@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="About James Muritu - Web Developer, Programmer, Graphic Designer, and Photographer">
+    <meta name="description"
+        content="About James Muritu - Web Developer, Programmer, Graphic Designer, and Photographer">
     <meta name="keywords" content="about, web developer, programmer, graphic designer, photographer">
     <title>About - Sir_James Muritu</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
@@ -244,6 +246,7 @@
                 opacity: 0;
                 transform: translateY(30px);
             }
+
             to {
                 opacity: 1;
                 transform: translateY(0);
@@ -301,12 +304,13 @@
         }
     </style>
 </head>
+
 <body>
     <header>
         <div class="container">
             <div class="header-content">
                 <div class="header-title">
-                    <img class="profile" src="/assets/images/official.jpeg" alt="Profile Picture">
+                    <img class="profile" src="assets/images/official.jpeg" alt="Profile Picture">
                     <h1>James Muritu</h1>
                 </div>
                 <i class="fas fa-bars menu-icon" onclick="toggleMenu()"></i>
@@ -341,7 +345,7 @@
 
             <div class="profile-section">
                 <div class="me">
-                    <img src="/assets/images/casial.jpeg" alt="James Muritu">
+                    <img src="assets/images/casial.jpeg" alt="James Muritu">
                 </div>
                 <h3 style="color: #15fa00; margin-top: 1rem">
                     Hi, I'm Sir_James Muritu
@@ -414,19 +418,19 @@
         }
 
         // Close dropdown when clicking outside
-        document.addEventListener('click', function(event) {
+        document.addEventListener('click', function (event) {
             const dropdown = document.getElementById('dropdownMenu');
             const menuIcon = document.querySelector('.menu-icon');
-            
+
             if (!menuIcon.contains(event.target) && !dropdown.contains(event.target)) {
                 dropdown.classList.remove('show');
             }
         });
 
         // Animate cards on scroll
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             const cards = document.querySelectorAll('.card');
-            
+
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
@@ -441,4 +445,5 @@
         });
     </script>
 </body>
+
 </html>

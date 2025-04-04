@@ -419,7 +419,7 @@
     <div class="container">
       <div class="header-content">
         <div class="header-title">
-          <img class="profile" src="/assets/images/official.jpeg" alt="Profile Picture" />
+          <img class="profile" src="assets/images/official.jpeg" alt="Profile Picture" />
           <h1>James Muritu</h1>
         </div>
         <i class="fas fa-bars menu-icon" onclick="toggleMenu()"></i>
@@ -521,7 +521,7 @@
     </div>
   </main>
 
-  <script src="/assets/js/main.js"></script>
+  <script src="assets/js/main.js"></script>
   <script>
     async function submitForm(event) {
       event.preventDefault();
@@ -536,7 +536,7 @@
 
       try {
         const formData = new FormData(form);
-        const response = await fetch('/database/process_contact.php', {
+        const response = await fetch('database/process_contact.php', {
           method: 'POST',
           body: formData
         });
