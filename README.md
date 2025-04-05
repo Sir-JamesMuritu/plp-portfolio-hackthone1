@@ -94,8 +94,8 @@ A modern, responsive portfolio website showcasing my skills and services as a We
 
 ## 📞 Contact
 
-- **Email**: [your.email@example.com](mailto:your.email@example.com)
-- **Phone**: +254 704 234 834
+- **Email**: [jamesmuritu254@gmail.com](mailto:your.email@example.com)
+- **Phone**: +254 115 685 647
 - **Location**: Nairobi, Kenya
 
 ## 🤝 Contributing
