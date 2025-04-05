@@ -1,72 +1,113 @@
-# Professional Portfolio Website
+# James Muritu - Professional Portfolio Website
 
-A modern, responsive portfolio website showcasing my work, skills, and professional experience.
+![Portfolio Preview](assets/images/official.jpeg)
 
-## Features
+A modern, responsive portfolio website showcasing my skills and services as a Web Developer, Programmer, Graphic Designer, and Photographer.
 
-- Responsive design that works on all devices
-- Modern and clean UI/UX
-- Interactive elements and smooth animations
-- SEO optimized
-- Downloadable CV
-- Contact form
-- Services showcase
-- Portfolio gallery
+## 🌐 Live Demo
+[View Live Website](https://sir-jamesmuritu.github.io/plp-portfolio-hackthone1)
 
-## Project Structure
+## 🚀 Features
 
-```
-portfolio/
-├── assets/
-│   ├── css/
-│   │   └── style.css
-│   ├── js/
-│   │   └── main.js
-│   └── images/
-├── pages/
-│   ├── services.html
-│   └── contact.html
-├── index.html
-└── README.md
-```
+- **Responsive Design**: Fully responsive layout that works on all devices
+- **Modern UI**: Clean and professional design with smooth animations
+- **Contact Form**: Interactive contact form with backend integration
+- **Dynamic Content**: Showcase of skills, services, and projects
+- **Social Integration**: Links to social media profiles
+- **Performance Optimized**: Fast loading and smooth transitions
 
-## Technologies Used
+## 📋 Pages
+
+1. **Home**: Introduction and quick overview
+2. **About**: Detailed information about me and my background
+3. **Services**: List of services I offer
+4. **Skills**: Technical skills and expertise
+5. **Contact**: Contact form and information
+
+## 🛠️ Technologies Used
 
 - HTML5
-- CSS3 (with Flexbox and Grid)
-- JavaScript (ES6+)
-- Font Awesome Icons
+- CSS3
+- JavaScript
+- PHP (Backend)
+- MySQL (Database)
+- Font Awesome (Icons)
 - Google Fonts
-- AOS (Animate On Scroll) library
 
-## Setup and Installation
+## 🚀 Getting Started
 
-1. Clone the repository
-2. Open `index.html` in your browser
-3. For development, use a local server (e.g., Live Server in VS Code)
+### Prerequisites
 
-## Features to Implement
+- Web server (Apache/Nginx)
+- PHP 7.4 or higher
+- MySQL 5.7 or higher
+- Modern web browser
 
-- [ ] Responsive navigation with dropdown menu
-- [ ] Interactive portfolio gallery
-- [ ] Contact form with validation
-- [ ] Smooth scroll animations
-- [ ] Dark/Light mode toggle
-- [ ] CV download functionality
-- [ ] Services showcase
-- [ ] SEO optimization
+### Installation
 
-## Browser Support
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/sir-jamesmuritu/plp-portfolio-hackthone1.git
+   ```
 
-- Chrome (latest)
-- Firefox (latest)
-- Safari (latest)
-- Edge (latest)
+2. Set up the database:
+   - Import `database/portfolio.sql` into your MySQL database
+   - Update database credentials in `database/config.php`
 
-## Contributing
+3. Configure the web server:
+   - Point your web server to the project directory
+   - Ensure PHP has write permissions for the database directory
 
-Feel free to submit issues and enhancement requests.
+4. Update contact information:
+   - Edit contact details in `contact.html`
+   - Update social media links in all pages
 
-## License
+## 📝 Usage
 
-This project is licensed under the MIT License.
+1. **Navigation**:
+   - Use the top navigation bar to move between pages
+   - Mobile users can access the menu through the hamburger icon
+
+2. **Contact Form**:
+   - Fill in all required fields
+   - Submit the form to send a message
+   - Receive confirmation of successful submission
+
+3. **Responsive Design**:
+   - The website automatically adjusts to different screen sizes
+   - Test on various devices for optimal experience
+
+## 🔧 Customization
+
+1. **Colors**:
+   - Main theme color: `#15fa00`
+   - Background: `#000000`
+   - Text: `#ffffff`
+
+2. **Images**:
+   - Replace profile image in `assets/images/official.jpeg`
+   - Update other images in the `assets/images` directory
+
+3. **Content**:
+   - Edit text content in respective HTML files
+   - Update services and skills in their respective pages
+
+## 📞 Contact
+
+- **Email**: [your.email@example.com](mailto:your.email@example.com)
+- **Phone**: +254 704 234 834
+- **Location**: Nairobi, Kenya
+
+## 🤝 Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 🙏 Acknowledgments
+
+- Font Awesome for icons
+- Google Fonts for typography
+- PLP for the opportunity to create this portfolio
